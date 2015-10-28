@@ -1,23 +1,16 @@
-#startButton {
-	-webkit-appearance: none;
-	align-items: flex-start;
-	background-attachment: scroll;
-	background-clip: border-box;
-	background-color: rgb(124, 252, 0);
-	background-image: url(http://www.chronometre-en-ligne.com/images/shade.png);
-	background-origin: padding-box;
-	background-position: 50% 100%;
-	background-size: auto;
+/*-------------------------------------
+---------------------------------------
+-----------------TIMER-----------------
+---------------------------------------
+-------------------------------------*/
+
+#timer {
+	background-color: rgb(240, 240, 240);
 	border-bottom-color: rgb(128, 128, 128);
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 	border-bottom-style: solid;
 	border-bottom-width: 2px;
-	border-image-outset: 0px;
-	border-image-repeat: stretch;
-	border-image-slice: 100%;
-	border-image-source: none;
-	border-image-width: 1;
 	border-left-color: rgb(128, 128, 128);
 	border-left-style: solid;
 	border-left-width: 2px;
@@ -25,39 +18,106 @@
 	border-right-style: solid;
 	border-right-width: 2px;
 	border-top-color: rgb(128, 128, 128);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	border-top-style: solid;
 	border-top-width: 2px;
-	box-sizing: border-box;
-	color: rgb(255, 255, 255);
-	cursor: pointer;
-	display: inline-block;
-	font-family: Verdanna, sans-serif;
-	font-size: 19px;
-	font-stretch: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	height: 28px;
-	letter-spacing: normal;
-	line-height: normal;
-	margin-bottom: 0px;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 0px;
-	padding-bottom: 1px;
-	padding-left: 6px;
-	padding-right: 6px;
-	padding-top: 1px;
+	color: rgb(0, 0, 0);
+	display: block;
+	font-family: 'Courier New', monospace;
+	font-size: 36px;
+	font-weight: bold;
+	height: 41px;
+	margin-bottom: 20px;
+	margin-left: 138.5px;
+	margin-right: 138.5px;
 	text-align: center;
-	text-decoration: none;
-	text-indent: 0px;
-	text-rendering: auto;
-	text-shadow: none;
-	text-transform: none;
-	width: 150px;
-	word-spacing: 0px;
-	writing-mode: lr-tb;
-	-webkit-writing-mode: horizontal-tb;	
+	width: 400px;
 }
+
+
+/*---------------------------------------
+-----------------------------------------
+-----------------BUTTONS-----------------
+-----------------------------------------
+---------------------------------------*/
+
+
+	#startButton, #pauseButton {
+		-webkit-appearance: none;
+		align-items: flex-start;
+		background-attachment: scroll;
+		background-clip: border-box;
+		background-image: url(http://www.chronometre-en-ligne.com/images/shade.png);
+		background-origin: padding-box;
+		background-position: 50% 100%;
+		background-size: auto;
+		border-bottom-color: rgb(128, 128, 128);
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border-bottom-style: solid;
+		border-bottom-width: 2px;
+		border-image-outset: 0px;
+		border-image-repeat: stretch;
+		border-image-slice: 100%;
+		border-image-source: none;
+		border-image-width: 1;
+		border-left-color: rgb(128, 128, 128);
+		border-left-style: solid;
+		border-left-width: 2px;
+		border-right-color: rgb(128, 128, 128);
+		border-right-style: solid;
+		border-right-width: 2px;
+		border-top-color: rgb(128, 128, 128);
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-top-style: solid;
+		border-top-width: 2px;
+		box-sizing: border-box;
+		color: rgb(255, 255, 255);
+		cursor: pointer;
+		display: inline-block;
+		font-family: Verdanna, sans-serif;
+		font-size: 19px;
+		font-stretch: normal;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		height: 28px;
+		letter-spacing: normal;
+		line-height: normal;
+		margin-bottom: 0px;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 0px;
+		padding-bottom: 1px;
+		padding-left: 6px;
+		padding-right: 6px;
+		padding-top: 1px;
+		text-align: center;
+		text-decoration: none;
+		text-indent: 0px;
+		text-rendering: auto;
+		text-shadow: none;
+		text-transform: none;
+		width: 15%;
+		word-spacing: 0px;
+		writing-mode: lr-tb;
+		-webkit-writing-mode: horizontal-tb;
+	}
+
+	/*-----------------------
+	-------START BUTTON------
+	-----------------------*/
+
+	#startButton {
+		background-color: rgb(124, 252, 0);
+	}
+
+	/*----------------------
+	-------STOP BUTTON------
+	----------------------*/
+
+	#pauseButton {
+		background-color: rgb(255, 0, 0);
+	}

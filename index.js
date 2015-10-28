@@ -1,40 +1,76 @@
-/*----------------------------------------------------
-------------------------------------------------------
------------------START TIMER ON CLICK-----------------
-------------------------------------------------------
-----------------------------------------------------*/
+/*----------------------------------------
+------------------------------------------
+-----------------ADD ZEROS----------------
+------------------------------------------
+----------------------------------------*/
 
-function startTimerOnClick() {
-	function formatTime(time) {
-	    time = time / 10;
-	    var min = parseInt(time / 6000),
-	        sec = parseInt(time / 100) - (min * 60),
-	        hundredths = pad(time - (sec * 100) - (min * 6000), 2);
-	    return (min > 0 ? pad(min, 2) : "00") + ":" + pad(sec, 2) + ":" + hundredths;
-	}
+function addZeros(number, length) {
+	var string = '' + number; // Int to string.
+	while (string.length < length) { string = '0' + string; }
+	return string;
+}
 
-	function pad(number, length) {
-	    var str = '' + number;
-	    while (str.length < length) {str = '0' + str;}
-	    return str;
-	}	
+/*----------------------------------
+------------------------------------
+-----------------NOW----------------
+------------------------------------
+----------------------------------*/
 
-	$('#startButton').click(function() {
-    // Timer speed in milliseconds
-    var incrementTime = 35;
+function now() {
+	return (new Date().getTime());
+}
 
-    // Current timer position in milliseconds
-    var currentTime = 0;
+/*-------------------------------------------
+---------------------------------------------
+-----------------START TIMER-----------------
+---------------------------------------------
+-------------------------------------------*/
 
-		var timer = $.timer(updateTimer, incrementTime, true);
+function startTimer() {
+	var startTime = now();
+	var currentTime = 0;
 
-    function updateTimer() {
-	    var timeString = formatTime(currentTime);
-	    $('#timer').html(timeString);
-	    currentTime += incrementTime;
-    }
+	var timer = setInterval(function() {
+								currentTime = (now() - startTime) + parseInt($('#additionalTime').text());
+
+								var hours = parseInt(currentTime / 3600000);
+								var minutes = parseInt(currentTime / 60000) - (hours * 60);
+								var seconds = parseInt(currentTime / 1000) - (minutes * 60);
+								var milliseconds = parseInt(currentTime % 1000);
+								$('#timer').text(addZeros(hours, 2) + ':' + addZeros(minutes, 2) + ':'
+																 + addZeros(seconds, 2) + '.' + addZeros(milliseconds, 3));
+							}, 55); // in millisecond.
+
+	$('#pauseButton').click(function() {
+    clearInterval(timer);
+		$('#additionalTime').text(currentTime);
 	});
 }
+
+
+/*----------------------------------------------
+------------------------------------------------
+-----------------BUTTONS EVENTS-----------------
+------------------------------------------------
+----------------------------------------------*/
+
+
+	/*-------------------------------
+	-------START TIMER ON CLICK------
+	-------------------------------*/
+
+	function startTimerOnClick() {
+		$('#startButton').click(function () {
+			$(this).css('display', 'none'); // Hide the 'Start' button.
+			startTimer();
+
+			$('#resumeButton').css('display', 'block'); // Show the 'Resume' button.
+			$('#resumeButton').click(function() {
+				startTimer();
+			});
+		});
+	}
+
 
 /*------------------------------------
 --------------------------------------
@@ -43,5 +79,6 @@ function startTimerOnClick() {
 ------------------------------------*/
 
 $(function() {
+	$('#resumeButton').css('display', 'none');
   startTimerOnClick();
 });
