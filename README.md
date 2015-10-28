@@ -10,10 +10,10 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 * Making the radio theme buttons work.
 * Save current chronometer time into a cookie.
 * Put in a same .css file the commune properties between dark.css and light.css.
+* Fixed a calculation bug that took place after the timer passed 1h.
 
 ## To do.
 
 * Store preferred theme in a cookie and handle it.
-* There seems to be a bug after the timer is 7h+.
 
 ## To commit.
