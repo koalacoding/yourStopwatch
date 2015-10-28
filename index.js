@@ -63,7 +63,7 @@ function now() {
 function transformMillisecondsToFormattedTimeAndPrint(time) { // Time in milliseconds.
 	var hours = parseInt(time / 3600000);
 	var minutes = parseInt(time / 60000) - (hours * 60);
-	var seconds = parseInt(time / 1000) - (minutes * 60);
+	var seconds = parseInt(time / 1000) - (minutes * 60) - (hours * 3600);
 	var milliseconds = parseInt(time % 1000);
 	$('#timer').text(addZeros(hours, 2) + ':' + addZeros(minutes, 2) + ':'
 									 + addZeros(seconds, 2) + '.' + addZeros(milliseconds, 3));
