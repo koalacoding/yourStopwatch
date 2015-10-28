@@ -1,0 +1,85 @@
+/*------------------------------------
+--------------------------------------
+-----------------BODY-----------------
+--------------------------------------
+------------------------------------*/
+
+body {
+  font-family: Arial;
+  font-weight: bold;
+}
+
+/*-------------------------------------
+---------------------------------------
+-----------------TIMER-----------------
+---------------------------------------
+-------------------------------------*/
+
+#timer {
+	border-bottom-color: rgb(128, 128, 128);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-left-color: rgb(128, 128, 128);
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-right-color: rgb(128, 128, 128);
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-top-color: rgb(128, 128, 128);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	display: block;
+	font-size: 36px;
+	font-weight: bold;
+	height: 41px;
+	margin-bottom: 20px;
+	margin-left: 138.5px;
+	margin-right: 138.5px;
+	text-align: center;
+	width: 400px;
+}
+
+
+/*---------------------------------------
+-----------------------------------------
+-----------------BUTTONS-----------------
+-----------------------------------------
+---------------------------------------*/
+
+	#startButton, #startButton:hover, #pauseButton, #pauseButton:hover, #clearButton,
+	#clearButton:hover {
+		-webkit-appearance: none;
+		-webkit-user-select: none;
+		border-radius: 3px;
+		box-sizing: border-box;
+		color: rgb(255, 255, 255);
+		cursor: pointer;
+		display: inline-block;
+		font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+		font-size: 15px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: bold;
+		height: 34px;
+		line-height: 20px;
+		margin-right: 0.5%;
+		padding-bottom: 6px;
+		padding-left: 12px;
+		padding-right: 12px;
+		padding-top: 6px;
+		position: relative;
+		text-decoration: none;
+		text-shadow: rgba(0, 0, 0, 0.14902) 0px -1px 0px;
+		vertical-align: middle;
+		white-space: nowrap;
+		width: 10%;
+		word-wrap: break-word;
+	}
+
+  #pauseButton, #clearButton {
+		display: none;
+	}

@@ -24,11 +24,11 @@ function loadAdditionalTimeCookie() {
 // Allow the user to change the page's theme by checking a radio button.
 function handleThemeChange() {
 	$("[value='darkTheme']").click(function() {
-		$('link').attr('href', '/chronometer/dark.css');
+		$('#styleSheet1').attr('href', '/chronometer/dark.css');
 	});
 
 	$("[value='lightTheme']").click(function() {
-		$('link').attr('href', '/chronometer/light.css');
+		$('#styleSheet1').attr('href', '/chronometer/light.css');
 	});
 }
 
