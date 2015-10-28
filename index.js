@@ -1,3 +1,20 @@
+/*---------------------------------------------------
+-----------------------------------------------------
+-----------------HANDLE THEME CHANGE-----------------
+-----------------------------------------------------
+---------------------------------------------------*/
+
+// Allow the user to change the page's theme by checking a radio button.
+function handleThemeChange() {
+	$("[value='darkTheme']").click(function() {
+		$('link').attr('href', '/chronometer/dark.css');
+	});
+
+	$("[value='lightTheme']").click(function() {
+		$('link').attr('href', '/chronometer/light.css');
+	});
+}
+
 /*----------------------------------------
 ------------------------------------------
 -----------------ADD ZEROS----------------
@@ -92,14 +109,9 @@ function startTimer() {
 --------------------------------------
 ------------------------------------*/
 
-function test() {
-	$(document).on('click', '#test', function() {
-		$('link').attr('href', '/chronometer/style.css');
-	});
-}
-
 $(function() {
   startTimerOnClick();
 	clearOnClick();
-	test();
+
+	handleThemeChange();
 });
