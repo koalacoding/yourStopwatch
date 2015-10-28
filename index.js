@@ -44,6 +44,10 @@ function startTimer() {
 	$('#pauseButton').click(function() {
     clearInterval(timer);
 		$('#additionalTime').text(currentTime);
+
+		$('#pauseButton').css('display', 'none');
+		$('#startButton').css('display', 'inline-block');
+		$('#clearButton').css('display', 'inline-block');
 	});
 }
 
@@ -62,12 +66,22 @@ function startTimer() {
 	function startTimerOnClick() {
 		$('#startButton').click(function () {
 			$(this).css('display', 'none'); // Hide the 'Start' button.
-			startTimer();
+			$('#clearButton').css('display', 'none'); // Hide the 'Clear' button in the case it was shown.
+			$('#pauseButton').css('display', 'inline-block'); // Show 'Pause' button.
 
-			$('#resumeButton').css('display', 'block'); // Show the 'Resume' button.
-			$('#resumeButton').click(function() {
-				startTimer();
-			});
+			startTimer();
+		});
+	}
+
+	/*-------------------------
+	-------CLEAR ON CLICK------
+	-------------------------*/
+
+	function clearOnClick() {
+		$('#clearButton').click(function() {
+			$('#clearButton').css('display', 'none');
+			$('#additionalTime').text('0'); // Delete any additional time.
+			$('#timer').text('00:00:00.000');
 		});
 	}
 
@@ -79,6 +93,6 @@ function startTimer() {
 ------------------------------------*/
 
 $(function() {
-	$('#resumeButton').css('display', 'none');
   startTimerOnClick();
+	clearOnClick();
 });
