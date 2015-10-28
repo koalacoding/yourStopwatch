@@ -1,3 +1,10 @@
+body {
+  background: rgb(33, 37, 43);
+
+  color: rgb(171, 178, 191);
+	font-family: Arial;
+}
+
 /*-------------------------------------
 ---------------------------------------
 -----------------TIMER-----------------
@@ -5,7 +12,7 @@
 -------------------------------------*/
 
 #timer {
-	background-color: rgb(240, 240, 240);
+	background-color: rgb(74, 82, 96);
 	border-bottom-color: rgb(128, 128, 128);
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -22,9 +29,7 @@
 	border-top-right-radius: 10px;
 	border-top-style: solid;
 	border-top-width: 2px;
-	color: rgb(0, 0, 0);
 	display: block;
-	font-family: 'Courier New', monospace;
 	font-size: 36px;
 	font-weight: bold;
 	height: 41px;
@@ -42,39 +47,55 @@
 -----------------------------------------
 ---------------------------------------*/
 
-
-	#startButton, #pauseButton, #clearButton {
-		background-image: url(http://www.chronometre-en-ligne.com/images/shade.png);
-		background-position: 50% 100%;
-		border: 2px solid rgb(128, 128, 128);
-		border-radius: 5px;
+	#startButton, #startButton:hover, #pauseButton, #pauseButton:hover, #clearButton,
+	#clearButton:hover {
+		-webkit-appearance: none;
+		-webkit-user-select: none;
+    border: 1px solid rgb(84, 84, 84);
+    border-radius: 5px;
 		color: rgb(255, 255, 255);
 		cursor: pointer;
 		display: inline-block;
-		font-family: Verdanna, sans-serif;
-		font-size: 100%;
-		height: 5%;
-		margin: 0px 10px;
-		padding: 1px 6px;
-		width: 15%;
+		font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+		font-size: 15px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: bold;
+		height: 34px;
+		line-height: 20px;
+		margin-right: 0.5%;
+		padding-bottom: 6px;
+		padding-left: 12px;
+		padding-right: 12px;
+		padding-top: 6px;
+		position: relative;
+		text-decoration: none;
+		text-shadow: rgba(0, 0, 0, 0.14902) 0px -1px 0px;
+		vertical-align: middle;
+		white-space: nowrap;
+		width: 10%;
+		word-wrap: break-word;
+
 	}
 
 	#pauseButton, #clearButton {
 		display: none;
+
+		background-color: rgb(215, 0, 0);
+	}
+
+	#pauseButton:hover, #clearButton:hover {
+		background-image: linear-gradient(rgb(205, 0, 0), rgb(155, 0, 0));
 	}
 
 	/*-----------------------
 	-------START BUTTON------
 	-----------------------*/
 
-	#startButton, #resumeButton {
-		background-color: rgb(124, 252, 0);
+	#startButton {
+		background-image: linear-gradient(rgb(118, 201, 89), rgb(76, 156, 48));
 	}
 
-	/*-----------------------
-	-------PAUSE BUTTON------
-	-----------------------*/
-
-	#pauseButton, #clearButton {
-		background-color: rgb(255, 0, 0);
+	#startButton:hover {
+		background-image: linear-gradient(rgb(101, 196, 68), rgb(66, 138, 41));
 	}

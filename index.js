@@ -92,7 +92,14 @@ function startTimer() {
 --------------------------------------
 ------------------------------------*/
 
+function test() {
+	$(document).on('click', '#test', function() {
+		$('link').attr('href', '/chronometer/style.css');
+	});
+}
+
 $(function() {
   startTimerOnClick();
 	clearOnClick();
+	test();
 });

@@ -10,6 +10,4 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 
 ## To do.
 
-
-
 ## To commit.
