@@ -1,3 +1,20 @@
+/*-----------------------------------------------------------
+-------------------------------------------------------------
+-----------------LOAD ADDITIONAL TIME COOKIE-----------------
+-------------------------------------------------------------
+-----------------------------------------------------------*/
+
+function loadAdditionalTimeCookie() {
+	// If there is no additionalTime cookie.
+ if (typeof Cookies.get('additionalTime') == 'undefined') {
+	 $('#additionalTime').text('0');
+ }
+
+ else { // If the cookie exists.
+	 $('#additionalTime').text(Cookies.get('additionalTime'));
+ }
+}
+
 /*---------------------------------------------------
 -----------------------------------------------------
 -----------------HANDLE THEME CHANGE-----------------
@@ -37,6 +54,21 @@ function now() {
 	return (new Date().getTime());
 }
 
+/*----------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+-----------------TRANSFORM MILLISECONDS TO FORMATTED TIME AND PRINT-----------------
+------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------*/
+
+function transformMillisecondsToFormattedTimeAndPrint(time) { // Time in milliseconds.
+	var hours = parseInt(time / 3600000);
+	var minutes = parseInt(time / 60000) - (hours * 60);
+	var seconds = parseInt(time / 1000) - (minutes * 60);
+	var milliseconds = parseInt(time % 1000);
+	$('#timer').text(addZeros(hours, 2) + ':' + addZeros(minutes, 2) + ':'
+									 + addZeros(seconds, 2) + '.' + addZeros(milliseconds, 3));
+}
+
 /*-------------------------------------------
 ---------------------------------------------
 -----------------START TIMER-----------------
@@ -44,22 +76,22 @@ function now() {
 -------------------------------------------*/
 
 function startTimer() {
-	var startTime = now();
+	var additionalTime = 0;
 	var currentTime = 0;
 
-	var timer = setInterval(function() {
-								currentTime = (now() - startTime) + parseInt($('#additionalTime').text());
+	var startTime = now();
 
-								var hours = parseInt(currentTime / 3600000);
-								var minutes = parseInt(currentTime / 60000) - (hours * 60);
-								var seconds = parseInt(currentTime / 1000) - (minutes * 60);
-								var milliseconds = parseInt(currentTime % 1000);
-								$('#timer').text(addZeros(hours, 2) + ':' + addZeros(minutes, 2) + ':'
-																 + addZeros(seconds, 2) + '.' + addZeros(milliseconds, 3));
+	var timer = setInterval(function() {
+								var additionalTime = parseInt($('#additionalTime').text());
+								currentTime = (now() - startTime) + additionalTime;
+								transformMillisecondsToFormattedTimeAndPrint(currentTime);
 							}, 55); // in millisecond.
 
 	$('#pauseButton').click(function() {
     clearInterval(timer);
+
+		Cookies.remove('additionalTime');
+
 		$('#additionalTime').text(currentTime);
 
 		$('#pauseButton').css('display', 'none');
@@ -102,6 +134,19 @@ function startTimer() {
 		});
 	}
 
+/*--------------------------------------------------------
+----------------------------------------------------------
+-----------------SAVE CHRONOMETER ON EXIT-----------------
+----------------------------------------------------------
+--------------------------------------------------------*/
+
+// Puts the chronometer's actual time in milliseconds in a cookie.
+function saveChronometerOnExit() {
+	window.onbeforeunload = function() {
+		var additionalTime = $('#additionalTime').text();
+		Cookies.set('additionalTime', additionalTime, 365);
+	}
+}
 
 /*------------------------------------
 --------------------------------------
@@ -110,8 +155,14 @@ function startTimer() {
 ------------------------------------*/
 
 $(function() {
+	loadAdditionalTimeCookie();
+	var additionalTime = $('#additionalTime').text();
+	transformMillisecondsToFormattedTimeAndPrint(additionalTime);
+
   startTimerOnClick();
 	clearOnClick();
 
 	handleThemeChange();
+
+	saveChronometerOnExit();
 });
