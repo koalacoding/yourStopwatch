@@ -13,6 +13,7 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 * Fixed a calculation bug that took place after the timer passed 1h.
 * Store preferred theme in a cookie and handle it.
 * Modified the design to be responsive.
+* Updating the timer font size when the user first enters the page.
 
 ## To do.
 

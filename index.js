@@ -1,3 +1,36 @@
+/*-------------------------------------------------
+---------------------------------------------------
+-----------------RESPONSIVE DESIGN-----------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+
+	/*------------------------------
+	-------SET TIMER FONT SIZE------
+	------------------------------*/
+
+	function setTimerFontSize() {
+		var timerWidth = parseInt($('#timer').css('width'));		
+		var timerHeight = parseInt($('#timer').css('height'));
+		var timerSize = timerWidth * timerHeight;
+		var fontSize = timerSize / 1000;
+
+		(fontSize < 11) ? fontSize = 11 : null;
+
+		$('#timer').css('font-size', fontSize);
+	}
+
+	/*--------------------------------------------
+	-------UPDATE FONT SIZE ON WINDOW RESIZE------
+	--------------------------------------------*/	
+
+	function updateTimerFontSizeOnWindowResize() {
+		$(window).resize(function() {
+			setTimerFontSize();
+		})
+	}
+
+
 /*-----------------------------------------------------------
 -------------------------------------------------------------
 -----------------LOAD ADDITIONAL TIME COOKIE-----------------
@@ -180,16 +213,8 @@ function saveChronometerAndThemeOnExit() {
 ------------------------------------*/
 
 $(function() {
-	$(window).resize(function() {
-		var timerWidth = parseInt($('#timer').css('width'));		
-		var timerHeight = parseInt($('#timer').css('height'));
-		var timerSize = timerWidth * timerHeight;
-		var fontSize = timerSize / 1000;
-
-		if (fontSize > 11) {
-			$('#timer').css('font-size', fontSize);
-		}
-	})
+	setTimerFontSize();
+	updateTimerFontSizeOnWindowResize();
 
 	initializeTheme();
 
