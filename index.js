@@ -155,12 +155,30 @@ function startTimer() {
 }
 
 
-/*----------------------------------------------
-------------------------------------------------
------------------BUTTONS EVENTS-----------------
-------------------------------------------------
-----------------------------------------------*/
+/*-------------------------------------------------------
+---------------------------------------------------------
+-----------------BUTTONS AND KEYS EVENTS-----------------
+---------------------------------------------------------
+-------------------------------------------------------*/
 
+
+	/*---------------------------------
+	-------HANDLE SPACE KEY PRESS------
+	---------------------------------*/
+
+	function handleSpaceKeyPress() {
+		$(document).keyup(function(keyPressed) {
+	    if (keyPressed.keyCode == 32) { // If the space bar has been pressed.
+	      if ($('#startButton').css('display') == 'inline-block') { // If the start button is visible.
+	      	$('#startButton').click();
+	      }
+
+	      else {
+	      	$('#pauseButton').click();
+	      }
+	    }		
+		})
+	}	
 
 	/*-------------------------------
 	-------START TIMER ON CLICK------
@@ -180,7 +198,7 @@ function startTimer() {
 	-------CLEAR ON CLICK------
 	-------------------------*/
 
-	function clearOnClick() {
+	function clearTimerOnClick() {
 		$('#clearButton').click(function() {
 			$('#clearButton').css('display', 'none');
 			$('#additionalTime').text('0'); // Delete any additional time.
@@ -222,8 +240,10 @@ $(function() {
 	var additionalTime = $('#additionalTime').text();
 	transformMillisecondsToFormattedTimeAndPrint(additionalTime);
 
+	handleSpaceKeyPress();
+
   startTimerOnClick();
-	clearOnClick();
+	clearTimerOnClick();
 
 	handleThemeChange();
 

@@ -14,9 +14,8 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 * Store preferred theme in a cookie and handle it.
 * Modified the design to be responsive.
 * Updating the timer font size when the user first enters the page.
+* Pressing the pace key now allows to start and pause the timer.
 
 ## To do.
-
-* Add space key to start and pause.
 
 ## To commit.
