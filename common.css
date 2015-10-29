@@ -5,6 +5,8 @@
 ------------------------------------*/
 
 body {
+	height: 100%;
+
   font-family: Arial;
   font-weight: bold;
 }
@@ -32,15 +34,13 @@ body {
 	border-top-right-radius: 10px;
 	border-top-style: solid;
 	border-top-width: 2px;
-	display: block;
-	font-size: 36px;
+	letter-spacing: 0.01vh;
 	font-weight: bold;
-	height: 41px;
+	line-height: 15.1vh;
+	height:15vh; 
 	margin-bottom: 20px;
-	margin-left: 138.5px;
-	margin-right: 138.5px;
 	text-align: center;
-	width: 400px;
+	width: 35vw;
 }
 
 
@@ -64,7 +64,7 @@ body {
 		font-style: normal;
 		font-variant: normal;
 		font-weight: bold;
-		height: 34px;
+		min-height: 6vh;
 		line-height: 20px;
 		margin-right: 0.5%;
 		padding-bottom: 6px;
@@ -76,7 +76,7 @@ body {
 		text-shadow: rgba(0, 0, 0, 0.14902) 0px -1px 0px;
 		vertical-align: middle;
 		white-space: nowrap;
-		width: 10%;
+		width: 15%;
 		word-wrap: break-word;
 	}
 

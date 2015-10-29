@@ -180,6 +180,17 @@ function saveChronometerAndThemeOnExit() {
 ------------------------------------*/
 
 $(function() {
+	$(window).resize(function() {
+		var timerWidth = parseInt($('#timer').css('width'));		
+		var timerHeight = parseInt($('#timer').css('height'));
+		var timerSize = timerWidth * timerHeight;
+		var fontSize = timerSize / 1000;
+
+		if (fontSize > 11) {
+			$('#timer').css('font-size', fontSize);
+		}
+	})
+
 	initializeTheme();
 
 	loadAdditionalTimeCookie();

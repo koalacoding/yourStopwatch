@@ -12,10 +12,10 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 * Put in a same .css file the commune properties between dark.css and light.css.
 * Fixed a calculation bug that took place after the timer passed 1h.
 * Store preferred theme in a cookie and handle it.
+* Modified the design to be responsive.
 
 ## To do.
 
-* Check responsive design.
 * Add space key to start and pause.
 
 ## To commit.
