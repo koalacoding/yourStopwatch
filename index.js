@@ -15,22 +15,43 @@ function loadAdditionalTimeCookie() {
  }
 }
 
-/*---------------------------------------------------
------------------------------------------------------
------------------HANDLE THEME CHANGE-----------------
------------------------------------------------------
----------------------------------------------------*/
+/*--------------------------------------
+----------------------------------------
+-----------------THEMES-----------------
+----------------------------------------
+--------------------------------------*/
 
-// Allow the user to change the page's theme by checking a radio button.
-function handleThemeChange() {
-	$("[value='darkTheme']").click(function() {
-		$('#styleSheet1').attr('href', '/chronometer/dark.css');
-	});
 
-	$("[value='lightTheme']").click(function() {
-		$('#styleSheet1').attr('href', '/chronometer/light.css');
-	});
-}
+	/*---------------------------
+	-------INITIALIZE THEME------
+	---------------------------*/
+
+ 	// Check if the user has a theme cookie, and use the theme if it is the case.
+	function initializeTheme() {
+		if (typeof Cookies.get('theme') != 'undefined') { // If the theme cookie exists.
+			var themeCookieValue = Cookies.get('theme');
+			$('#styleSheet1').attr('href', themeCookieValue);
+			 // Checks the right radio button.
+			 themeCookieValue = themeCookieValue.split('/')[2]; // Getting the 'xxx.css' part.
+			$("[value='"+themeCookieValue+"']").attr('checked', 'checked');
+		}
+
+		else { // If the theme cookie doesn't exist, we check the light theme by default.
+			$("[value='light.css']").attr('checked', 'checked');
+		}
+	}
+
+	/*------------------------------
+	-------HANDLE THEME CHANGE------
+	------------------------------*/
+
+	// Allow the user to change the page's theme by checking a radio button.
+	function handleThemeChange() {
+		$("[name='theme']").click(function() {
+			var themeName = $(this).attr('value');
+			$('#styleSheet1').attr('href', '/chronometer/' + themeName);
+		});
+	}
 
 /*----------------------------------------
 ------------------------------------------
@@ -134,17 +155,21 @@ function startTimer() {
 		});
 	}
 
+
 /*--------------------------------------------------------
 ----------------------------------------------------------
 -----------------SAVE CHRONOMETER ON EXIT-----------------
 ----------------------------------------------------------
 --------------------------------------------------------*/
 
-// Puts the chronometer's actual time in milliseconds in a cookie.
-function saveChronometerOnExit() {
+// Puts the chronometer's actual time in milliseconds and the user's theme in a cookie.
+function saveChronometerAndThemeOnExit() {
 	window.onbeforeunload = function() {
 		var additionalTime = $('#additionalTime').text();
 		Cookies.set('additionalTime', additionalTime, 365);
+
+		var actualTheme = $('#styleSheet1').attr('href');
+		Cookies.set('theme', actualTheme, 365);
 	}
 }
 
@@ -155,6 +180,8 @@ function saveChronometerOnExit() {
 ------------------------------------*/
 
 $(function() {
+	initializeTheme();
+
 	loadAdditionalTimeCookie();
 	var additionalTime = $('#additionalTime').text();
 	transformMillisecondsToFormattedTimeAndPrint(additionalTime);
@@ -164,5 +191,5 @@ $(function() {
 
 	handleThemeChange();
 
-	saveChronometerOnExit();
+	saveChronometerAndThemeOnExit();
 });

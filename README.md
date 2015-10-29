@@ -11,9 +11,11 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 * Save current chronometer time into a cookie.
 * Put in a same .css file the commune properties between dark.css and light.css.
 * Fixed a calculation bug that took place after the timer passed 1h.
+* Store preferred theme in a cookie and handle it.
 
 ## To do.
 
-* Store preferred theme in a cookie and handle it.
+* Check responsive design.
+* Add space key to start and pause.
 
 ## To commit.
