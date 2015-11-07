@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<link id="styleSheet0" rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+		<link id="styleSheet1" rel="stylesheet" type="text/css" href="/stylesheets/light.css">
+		<title>Yourstopwatch : Online stopwatch</title>
+	</head>
+	<body>
+		<center>
+		<span>Theme :</span>
+		<br />
+		<form>
+			Light <input type="radio" name="theme" value="light.css">
+			Dark <input type="radio" name="theme" value="dark.css">
+		</form>
+		<br />
+		<br />
+		<div id="timer"></div>
+		<button id="startButton">Start</button>
+		<button id="pauseButton">Pause</button>
+		<button id="clearButton">Clear</button>
+		<div id="additionalTime" style="display:none">0</div>
+		</center>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="/js/index.js"></script>
+		<script src="/js/jsCookie.js"></script>
+	</body>
+</html>

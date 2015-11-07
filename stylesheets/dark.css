@@ -1,0 +1,54 @@
+/*------------------------------------
+--------------------------------------
+-----------------BODY-----------------
+--------------------------------------
+------------------------------------*/
+
+body {
+  background: rgb(33, 37, 43);
+
+  color: rgb(171, 178, 191);
+}
+
+/*-------------------------------------
+---------------------------------------
+-----------------TIMER-----------------
+---------------------------------------
+-------------------------------------*/
+
+#timer {
+	background-color: rgb(74, 82, 96);
+}
+
+
+/*---------------------------------------
+-----------------------------------------
+-----------------BUTTONS-----------------
+-----------------------------------------
+---------------------------------------*/
+
+	#startButton, #startButton:hover, #pauseButton, #pauseButton:hover, #clearButton,
+	#clearButton:hover {
+    border: 1px solid rgb(84, 84, 84);
+    border-radius: 5px;
+	}
+
+	#pauseButton, #clearButton {
+		background-color: rgb(215, 0, 0);
+	}
+
+	#pauseButton:hover, #clearButton:hover {
+		background-image: linear-gradient(rgb(205, 0, 0), rgb(155, 0, 0));
+	}
+
+	/*-----------------------
+	-------START BUTTON------
+	-----------------------*/
+
+	#startButton {
+		background-image: linear-gradient(rgb(118, 201, 89), rgb(76, 156, 48));
+	}
+
+	#startButton:hover {
+		background-image: linear-gradient(rgb(101, 196, 68), rgb(66, 138, 41));
+	}
