@@ -17,5 +17,6 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 * Pressing the pace key now allows to start and pause the timer.
 
 ## To do.
+* Show the clear button when the user retrieve his stopwatch from a cookie.
 
 ## To commit.
