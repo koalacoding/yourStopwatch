@@ -1,6 +1,6 @@
-# chronometer
+# yourStopwatch
 
-Chronometer coded with HTML5, CSS3 and jQuery.
+Stopwatch coded with Javascript / jQuery.
 
 ## Steps finished.
 
@@ -19,6 +19,5 @@ Chronometer coded with HTML5, CSS3 and jQuery.
 ## To do.
 * Show the clear button when the user retrieve his stopwatch from a cookie.
 * Modify the timer font.
-* Adapt the code to Firefox.
 
 ## To commit.
