@@ -21,5 +21,4 @@ https://yourstopwatch.appspot.com/
 ## To do.
 * Show the clear button when the user retrieve his stopwatch from a cookie.
 * Modify the timer font.
-
-## To commit.
+* Improve timer's size when zooming and unzooming.
