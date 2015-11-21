@@ -1,9 +1,7 @@
 # yourStopwatch
 
-Stopwatch coded with Javascript / jQuery.
+Stopwatch coded with jQuery.
 
 https://yourstopwatch.appspot.com/
 
 ## To do.
-* Modify the timer font.
-* Improve timer's size when zooming and unzooming.
