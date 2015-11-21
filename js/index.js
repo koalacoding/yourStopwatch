@@ -45,6 +45,8 @@ function loadAdditionalTimeCookie() {
 
  else { // If the cookie exists.
 	 $('#additionalTime').text(Cookies.get('additionalTime'));
+   
+   $('#clearButton').css('display', 'inline-block');
  }
 }
 
