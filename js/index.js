@@ -12,10 +12,12 @@
 	function setTimerFontSize() {
 		var timerWidth = parseInt($('#timer').css('width'));
 		var timerHeight = parseInt($('#timer').css('height'));
+
 		var timerSize = timerWidth * timerHeight;
 		var fontSize = timerSize / 1000;
 
-		(fontSize < 11) ? fontSize = 11 : null;
+		(fontSize < 15) ? fontSize = 15 : null;
+    (fontSize > 87) ? fontSize = 87 : null;
 
 		$('#timer').css('font-size', fontSize);
 	}

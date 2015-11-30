@@ -8,7 +8,7 @@ body {
 	height: 100%;
 	text-align: center;
 
-  font-family: Arial;
+  font-family: 'Oswald', Arial;
   font-weight: bold;
 }
 
@@ -79,6 +79,7 @@ body {
 		text-shadow: rgba(0, 0, 0, 0.14902) 0px -1px 0px;
 		vertical-align: middle;
 		white-space: nowrap;
+    min-width: 60px;
 		width: 15%;
 		word-wrap: break-word;
 	}
