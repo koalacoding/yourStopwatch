@@ -45,8 +45,10 @@ function loadAdditionalTimeCookie() {
 
  else { // If the cookie exists.
 	 $('#additionalTime').text(Cookies.get('additionalTime'));
-   
-   $('#clearButton').css('display', 'inline-block');
+
+   /* We show the clear button only if the time retrieved from the cookie
+      is greater than 0 millisecond */
+   if (parseInt($('#additionalTime').text()) > 0) $('#clearButton').css('display', 'inline-block');
  }
 }
 
